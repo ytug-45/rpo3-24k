@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Ускоряем анимации */
+    transition: all 0.3s ease; 
+    font-family: "Jolly Lodger", system-ui;
+    font-size: 30px;
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333; 
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    /* Сдвигаем контент вниз, чтобы он не перекрывался фиксированной панелью */
+    padding-top: 60px; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 1. ФИКСИРОВАННАЯ КРАСНАЯ НАВИГАЦИЯ */
+.fixed-nav-wrapper { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    /* КРАСНЫЙ ЦВЕТ как в макете */
+    background-color: #c0392b; 
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5%; /* Внутренние отступы красной полосы */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.naver {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5%; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+.contact-link {
+    margin-left: 70px;
+}
+.contact-link a{
+    font-weight: 600;
+    font-size: 1.15em;
+    color: #fff;
+    padding: 5px, 10px;
+    
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 1.1em;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    border-bottom: 2px solid #fff; 
+    transform: scale(1.05); 
+    filter: brightness(1.2); 
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.main-header {
+    background-image: url("gome.jpg"); 
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 60px); 
+    position: relative;
+    background-attachment: fixed; 
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 5;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5em;
+    color: #fff;
+    letter-spacing: 5px;
+    font-weight: 400;
+}
+
+.subtitle {
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: -10px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.about-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.section-title-tag {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #c0392b; 
+}
+
+.intro-text {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.body-text {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+.feature-item {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.feature-item .icon {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.subsection-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.servers {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.server-card {
+    text-align: center;
+}
+
+.server-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+    border: 3px solid #c0392b; 
+}
+
+.server-name {
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.menu-sections {
+    background-color: #fff;
+    padding: 60px 5%;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-anime:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.menu-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-details {
+    padding: 15px;
+}
+
+.menu-details h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #c0392b;
+}
+
+.menu-details p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+
+.chefs-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px 5%;
+    display: grid;
+    grid-template-columns: 300px 1fr; 
+    gap: 30px 50px;
+    align-items: center;
+}
+
+.chef-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chef-card-anime:hover {
+    transform: scale(1.03); 
+    filter: brightness(1.1); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.chef-photo {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover;
+    display: block;
+}
+
+.chef-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    padding: 10px 0;
+    color: #c0392b;
+}
+
+.chef-info {
+    font-size: 1em;
+    line-height: 1.8;
+}
+
+.chefs-section .chef-card:nth-child(3) {
+    grid-row: 3;
+    grid-column: 1;
+}
+.chefs-section .chef-info:nth-child(4) {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+
+
+.main-footer {
+    background-color: #c0392b; 
+    color: #fff;
+    padding: 30px 5%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+.footer-contact {
+    text-align: right;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+
+
+@media (max-width: 900px) {
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .chefs-section {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    .chefs-section .chef-card:nth-child(3),
+    .chefs-section .chef-info:nth-child(4) {
+        grid-row: auto;
+        grid-column: auto;
+    }
+    .chef-card {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+    .chef-info {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        padding-top: 10px;
+    }
+    .nav-links li {
+        margin: 0 10px;
+    }
+    .hero-text h1 {
+        font-size: 3em;
+    }
+    .menu-grid {
+        grid-template-columns: 1fr; 
+    }
+    .features {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-contact {
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #222; /* темный фон для контраста */
+  color: white;
+  font-family: 'Crimson Pro', serif; /* или твой основной шрифт */
+}
+
+.contact h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-family: 'Sawarabi Mincho', serif;
+}
+
+.contact p {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
